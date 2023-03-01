@@ -39,13 +39,14 @@ const InfoContainer = styled.div`
 const DescriptionContainer = styled.div``
 
 const TechnologiesContainer = styled.div`
-  display: flex;
+  display: flex-wrap;
   justify-content: space-between;
 
   span {
     color: var(--slate);
     font-family: sfmono;
     font-size: 14px;
+    padding-right: 10px;
   }
 `
 
@@ -70,7 +71,7 @@ function ProjectInfo({
       </DescriptionContainer>
       <TechnologiesContainer>
         {technologies.map((el, i) => (
-          <span key={i}>{el}</span>
+          <span key={i}>{`${el} |`}</span>
         ))}
       </TechnologiesContainer>
       <IconContainer

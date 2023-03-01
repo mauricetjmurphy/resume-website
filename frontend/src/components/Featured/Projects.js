@@ -63,7 +63,7 @@ const ProjectImageContainer = styled.a`
 const Projects = () => {
   const data = useStaticQuery(graphql`
     {
-      imageOne: file(relativePath: { eq: "the_foodie.png" }) {
+      imageOne: file(relativePath: { eq: "nevertoolate.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -85,7 +85,7 @@ const Projects = () => {
       <Title number={"02."} title={"Projects"} />
       <ProjectItem>
         <ProjectImageContainer
-          href="https://the-foodie-app.herokuapp.com"
+          href="https://nevertoolate.world/"
           target="_blank"
           rel="noreferrer"
         >
@@ -95,30 +95,13 @@ const Projects = () => {
           />
         </ProjectImageContainer>
         <ProjectInfo
-          alignment={"right"}
+          alignment={"left"}
           projectName={projectData[0].projectName}
           projectDesciption={projectData[0].projectDescription}
           technologies={projectData[0].technologies}
-          gitHubUrl={"https://github.com/mauricetjmurphy/The_Foodie_Flask_App"}
-          websiteUrl={"https://the-foodie-app.herokuapp.com"}
+          gitHubUrl={"https://github.com/mauricetjmurphy/Personal_Site_Gatsby"}
+          websiteUrl={"https://resume.gemtechsolutions.org/"}
         />
-      </ProjectItem>
-      <ProjectItem>
-        <ProjectInfo
-          alignment={"left"}
-          projectName={projectData[1].projectName}
-          projectDesciption={projectData[1].projectDescription}
-          technologies={projectData[1].technologies}
-          gitHubUrl={"https://github.com/mauricetjmurphy/Fabrique"}
-          websiteUrl={"https://fabrique-django-react-app.herokuapp.com/#/"}
-        />
-        <ProjectImageContainer
-          href="https://fabrique-django-react-app.herokuapp.com/#/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Img fluid={data.imageTwo.childImageSharp.fluid} objectFit />
-        </ProjectImageContainer>
       </ProjectItem>
     </ProjectsContainer>
   )
