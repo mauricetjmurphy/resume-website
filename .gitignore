@@ -76,9 +76,6 @@ yarn-error.log
 # Local .terraform directories
 **/.terraform/*
 
-# Exclude the directory containing the large file
-/development/cloudfront/.terraform
-
 # .tfstate files
 *.tfstate
 *.tfstate.*
