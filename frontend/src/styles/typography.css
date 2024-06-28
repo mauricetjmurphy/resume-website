@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "calibre";
+  src: url("../../public/fonts/Calibre-Regular.woff2");
+}
+
+@font-face {
+  font-family: "calibre-semibold";
+  src: url("../../public/fonts/Calibre-Semibold.woff2");
+}
+
+@font-face {
+  font-family: "sfmono";
+  src: url("../../public/fonts/SFMonoRegular.otf");
+}
