@@ -1,58 +1,53 @@
 {
-  "name": "maurice-murphy",
-  "private": true,
-  "description": "A personal portfolio website to showcase my latest work",
+  "name": "frontend",
   "version": "0.1.0",
-  "author": "Maurice Murphy",
-
+  "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.9.3",
-    "babel-plugin-styled-components": "^1.13.2",
-    "bootstrap": "^5.1.0",
-    "core-js": "^3.17.2",
-    "gatsby": "^3.4.1",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-gatsby-cloud": "^2.11.0",
-    "gatsby-plugin-image": "^1.12.0",
-    "gatsby-plugin-manifest": "^3.12.0",
-    "gatsby-plugin-offline": "^4.12.0",
-    "gatsby-plugin-react-helmet": "^4.4.0",
-    "gatsby-plugin-sharp": "^3.12.0",
-    "gatsby-plugin-styled-components": "^4.12.0",
-    "gatsby-source-filesystem": "^3.12.0",
-    "gatsby-transformer-remark": "^4.10.0",
-    "gatsby-transformer-sharp": "^3.12.0",
-    "jquery": "^3.6.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0",
-    "react-scroll": "^1.8.3",
-    "styled-components": "^5.3.1"
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.24.0",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
+    "styled-components": "^6.1.11",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "prettier": "2.3.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "yarn run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-scroll": "^1.8.10"
   }
 }
