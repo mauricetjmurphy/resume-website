@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket  = "gemtech-remotestate-prod"
-    key     = "resume-website/cloudfront/terraform.tfstate"
+    key     = "prm/cloudfront/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
     profile = "default"
@@ -13,10 +13,10 @@ terraform {
 }
 
 locals {
-  region          = "us-east-1"
-  name            = "mauricetjmurphy-resume-website"
-  environment     = "prod"
-  acm_certificate = "mauricemurphy.org"
+  region      = "us-east-1"
+  name        = "prm"
+  environment = "prod"
+  domain_name = "mauricemurphy.org"
 }
 
 module "s3_bucket" {
@@ -43,13 +43,13 @@ data "aws_iam_policy_document" "s3_policy" {
       identifiers = [aws_cloudfront_origin_access_identity.cloudfront.s3_canonical_user_id]
     }
     actions   = ["s3:GetObject"]
-    resources = [format("%s/*", module.s3_bucket.arn)]
+    resources = ["${module.s3_bucket.arn}/*"]
   }
 }
 
 module "cdn" {
   source                 = "git::ssh://git@github.com/mauricetjmurphy/gemtech-terraform-modules.git//cloudfront"
-  name                   = "${local.name}"
+  name                   = local.name
   environment            = local.environment
   enabled_bucket         = true
   compress               = false
@@ -63,7 +63,7 @@ module "cdn" {
 
 resource "aws_route53_record" "root_domain" {
   zone_id         = data.aws_route53_zone.hosted_zone.id
-  name            = local.acm_certificate
+  name            = local.domain_name
   type            = "A"
   allow_overwrite = true
   alias {
