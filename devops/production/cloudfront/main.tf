@@ -13,10 +13,10 @@ terraform {
 }
 
 locals {
-  region          = "us-east-1"
-  name            = "mauricetjmurphy-resume-website"
-  environment     = "prod"
-  acm_certificate = "mauricemurphy.org"
+  region      = "us-east-1"
+  name        = "mauricetjmurphy-resume-website"
+  environment = "prod"
+  domain_name = "mauricemurphy.org"
 }
 
 module "s3_bucket" {
@@ -49,7 +49,7 @@ data "aws_iam_policy_document" "s3_policy" {
 
 module "cdn" {
   source                 = "git::ssh://git@github.com/mauricetjmurphy/gemtech-terraform-modules.git//cloudfront"
-  name                   = "${local.name}"
+  name                   = local.name
   environment            = local.environment
   enabled_bucket         = true
   compress               = false
@@ -63,7 +63,7 @@ module "cdn" {
 
 resource "aws_route53_record" "root_domain" {
   zone_id         = data.aws_route53_zone.hosted_zone.id
-  name            = local.acm_certificate
+  name            = local.domain_name
   type            = "A"
   allow_overwrite = true
   alias {
