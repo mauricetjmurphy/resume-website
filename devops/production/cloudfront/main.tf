@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket  = "gemtech-remotestate-prod"
-    key     = "resume-website/cloudfront/terraform.tfstate"
+    key     = "prm/cloudfront/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
     profile = "default"
@@ -14,7 +14,7 @@ terraform {
 
 locals {
   region      = "us-east-1"
-  name        = "mauricetjmurphy-resume-website"
+  name        = "prm"
   environment = "prod"
   domain_name = "mauricemurphy.org"
 }
@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "s3_policy" {
       identifiers = [aws_cloudfront_origin_access_identity.cloudfront.s3_canonical_user_id]
     }
     actions   = ["s3:GetObject"]
-    resources = [format("%s/*", module.s3_bucket.arn)]
+    resources = ["${module.s3_bucket.arn}/*"]
   }
 }
 
