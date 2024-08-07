@@ -14,18 +14,18 @@ interface SEOHeaderProps {
 
 const SEOHeader: React.FC<SEOHeaderProps> = ({ 
   title, 
-  description = "Your website's default description.", 
+  description = "Resume website for Maurice Murphy", 
   lang = 'en', 
   meta = [] 
 }) => {
-  const defaultTitle = "Your Website's Default Title";
+  const defaultTitle = "Maurice Murphy's resume";
   
   const structuredData = {
     "@context": "http://schema.org",
     "@type": "WebSite",
     "name": title,
     "description": description,
-    "url": "http://www.yourwebsite.com"
+    "url": "http://www.mauricemurphy.org"
   };
 
   return (
@@ -55,6 +55,7 @@ const SEOHeader: React.FC<SEOHeaderProps> = ({
         ...meta,
       ]}
     >
+      <link rel="icon" href="/favicon.ico" />
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>

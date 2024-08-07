@@ -1,3 +1,5 @@
+.PHONY: build deploy-prod
+
 build:
 	rm -rf ./build
 	yarn build
