@@ -72,9 +72,9 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
     height: 100%;
-    width: 100%;
+    width: auto;
     flex: 1;
-    padding: 32px;
+    padding-left: 32px;
 
     @media (max-width: 768px) {
         padding: 0;
@@ -85,7 +85,7 @@ const ImageContainer = styled.div`
 
     @media (max-width: 480px) {
         width: 250px;
-        height: 250px;
+        height: auto;
         padding: 20px 0;
         margin: 0 auto;
     }
