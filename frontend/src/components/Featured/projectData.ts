@@ -1,21 +1,20 @@
 const data = [
-  {
-    projectName: "Never Too Late",
-    projectDescription: `Never Too Late is an environmental blog website dedicated to 
-      bringing you the latest news and information on climate change and its impact on our daily lives. We believe
-      that it is never too late to take action and do our part in protecting the
-      environment. Our goal is to inform and educate our readers on the real
-      impact of climate change, and how we can make a difference through small
-      everyday actions and changes in our lifestyles.`,
-    technologies: [
-      "React",
-      "TypeScript",
-      "Material UI",
-      "NodeJS",
-      "Micro services",
-      "DynamoDB",
-    ],
-  },
-]
+    {
+        projectName: 'Documated',
+        projectDescription: `Documated, a business website specializing in delivering 
+        cutting-edge technical services with a focus on automation. The site is designed 
+        to provide businesses with streamlined, user-friendly access to our automation solutions.`,
+        technologies: [
+            'React',
+            'TypeScript',
+            'ChakraUI',
+            'NodeJS',
+            'Micro services',
+            'Lambda',
+            'API Gateway',
+            'AWS SES',
+        ],
+    },
+];
 
-export default data
+export default data;
